@@ -1,0 +1,52 @@
+import React from 'react';
+import {Text, SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
+
+class App extends React.Component {
+  state = {
+    count: 10,
+  };
+  increment = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
+
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Text style={styles.fontCount}>{this.state.count}</Text>
+        <TouchableOpacity style={styles.addTouch} onPress={this.increment}>
+          <Text style={styles.addTouchText}>Increment</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'antiquewhite',
+    flex: 1,
+    // justifyContent: 'center',
+  },
+
+  fontCount: {
+    fontSize: 120,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  addTouch: {
+    backgroundColor: 'black',
+    padding: 10,
+    margin: 20,
+    borderRadius: 8,
+  },
+  addTouchText: {
+    fontSize: 24,
+    color: 'white',
+    textAlign: 'center',
+  },
+});
+
+export default App;

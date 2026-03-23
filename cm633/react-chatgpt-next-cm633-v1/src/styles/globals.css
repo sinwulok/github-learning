@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-700;
+}
+
+.max-w-2\/3 {
+  max-width: 66.666667%;
+}
